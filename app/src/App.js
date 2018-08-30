@@ -1,50 +1,29 @@
 import React from "react";
+import IsEmail from 'isemail';
+import Thanks from "./Thanks";
+import Form from "./Form";
 
 export default class App extends React.Component {
 
+  state = {
+    name: '',
+    email: '',
+    pwd: '',
+    pwd_confirmation: '',
+    submitted: false,
+  }
 
   render() {
-    return (
-        <form>
+    let {name,email,submitted} = this.state;
 
-          <div className="form-group">
-            <label htmlFor="name">Имя</label>
-            <input type="text"
-                   className="form-control"
-                   id="name"
-                   name="name"
-                   placeholder="Введите имя"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Почта</label>
-            <input type="email"
-                   className="form-control"
-                   id="email"
-                   name="email"
-                   placeholder="Введите почту"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="pwd">Пароль</label>
-            <input type="password"
-                   name="pwd"
-                   className="form-control"
-                   id="pwd"
-                   placeholder="Пароль"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="pwd_confirmation">Подтвердите пароль</label>
-            <input type="password"
-                   name="pwd_confirmation"
-                   className="form-control"
-                   id="pwd_confirmation"
-                   placeholder="Пароль"
-            />
-          </div>
-          <button type="submit" className="btn btn-primary">Отправить</button>
-        </form>
-    );
+    if (!submitted) {
+      return (
+          <Form onSuccess={(obj)=>this.setState(obj)}/>
+      );
+    } else {
+      return (
+          <Thanks name={name} email={email}/>
+      );
+    }
   }
 }
