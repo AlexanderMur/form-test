@@ -14,7 +14,7 @@ export default class App extends React.Component {
               Having trouble? <a href="#">Contact us</a>
             </p>
             <p className="lead">
-              <a className="btn btn-primary btn-sm" href="/" role="button">Home</a>
+              <a className="btn btn-primary btn-sm" href="index.html" role="button">Home</a>
             </p>
           </div>
     )
