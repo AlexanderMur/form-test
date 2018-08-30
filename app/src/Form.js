@@ -114,7 +114,7 @@ export default class Form extends React.Component {
                 autoComplete={'on'}
             />
             <div className="invalid-feedback">
-              Пароль должен содержать одну заглавную букву, и хотя бы 1 цифру
+              Пароль должен содержать хотя бы одну заглавную букву, 1 цифру, и быть не короче 8 символов
             </div>
           </div>
           <div className="form-group">
